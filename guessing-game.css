@@ -1,14 +1,14 @@
 body {
-            background-image: url("cosmos.jpg");
-            background-repeat: no-repeat;
-            font-family: 'PT Sans', sans-serif;
-        }
+    background-color: black;
+    background-repeat: no-repeat;
+    font-family: 'PT Sans', sans-serif;
+    }
 
-        #container {
-            margin:0 auto;
-            width: 50%;
-            height: auto;
-            background-color: white;
-            padding:2em;
-            margin-top:2em;
-        }
+#container {
+    margin:0 auto;
+    width: 50%;
+    height: auto;
+    background-color: white;
+    padding:2em;
+    margin-top:2em;
+    }
