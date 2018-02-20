@@ -1,39 +1,40 @@
 
     document.addEventListener("DOMContentLoaded", function(event) { 
-           var randomNumber = Math.floor((Math.random()*100)+1);
+
+            var randomNumber = Math.floor((Math.random()*100)+1);
             var submitButton = document.getElementById("button");
             var arrayOfNumbers = [];
-            var text = document.getElementById("text");
-            var num = document.getElementById("numbers");
+            var advice = document.getElementById("advice");
+            var guesses = document.getElementById("guesses");
             var reset = document.getElementById("reset");
             var guessCount = 0;
 
             function checkTheNumber() {
 
-                var usersNumber = document.getElementById("userN").value;
+                var usersNumber = document.getElementById("inputValue").value;
 
                 if (usersNumber > 100 || usersNumber < 1) {
                         alert("Please, choose a number in a range from 1 to 100.");
                 } else {
 
                     if (usersNumber == randomNumber) {
-                        text.innerHTML = "You've guessed the number!";
-                        text.style.color = "green";
-                        text.style.fontWeight = "bold";
+                        advice.innerHTML = "You've guessed the number!";
+                        advice.style.color = "green";
+                        advice.style.fontWeight = "bold";
                         guessCount++;
                         arrayOfNumbers.push(usersNumber);
                         stopTheGame();
                     } else if (usersNumber < randomNumber) {
-                        text.innerHTML = "<b>Hint:</b> The number is too low.";
+                        advice.innerHTML = "<b>Hint:</b> The number is too low.";
                         arrayOfNumbers.push(usersNumber);
                         guessCount++;
                     } else if (usersNumber > randomNumber) {
-                        text.innerHTML = "<b>Hint:</b> The number is too high.";
+                        advice.innerHTML = "<b>Hint:</b> The number is too high.";
                         guessCount++;
                         arrayOfNumbers.push(usersNumber);
                     }  
 
-                    num.innerHTML += usersNumber + ", ";
+                    guesses.innerHTML += usersNumber + ", ";
                 }
                 
                 if (guessCount > 6) { 
@@ -49,16 +50,14 @@
                 submitButton.disabled = true;
             };
 
-            
-
             function restart() {
                 submitButton.disabled = false;
                 guessCount = 0;
                 arrayOfNumbers = [];
-                text.innerHTML = "";
-                num.innerHTML = "";
+                advice.innerHTML = "";
+                guesses.innerHTML = "";
                 randomNumber = Math.floor((Math.random()*100)+1);
-                document.getElementById("userN").value = "";
+                document.getElementById("inputValue").value = "";
 
             };
 
