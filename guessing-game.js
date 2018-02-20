@@ -36,7 +36,7 @@
                     num.innerHTML += usersNumber + ", ";
                 }
                 
-                if (guessCount > 4) { 
+                if (guessCount > 6) { 
                     if(usersNumber != randomNumber) {
                         stopTheGame();
                         alert("None of those numbers is the correct one. You have no more turns. Try a new game!");
@@ -47,7 +47,9 @@
 
             function stopTheGame(){
                 submitButton.disabled = true;
-                };
+            };
+
+            
 
             function restart() {
                 submitButton.disabled = false;
@@ -61,4 +63,5 @@
             };
 
             submitButton.addEventListener("click", checkTheNumber);
+            reset.addEventListener("click", restart);
         });
