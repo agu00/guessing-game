@@ -40,7 +40,9 @@
                 if (guessCount > 6) { 
                     if(usersNumber != randomNumber) {
                         stopTheGame();
-                        alert("None of those numbers is the correct one. You have no more turns. Try a new game!");
+                        advice.innerHTML = "None of those numbers is the correct one. You have no more turns. Try a new game!";
+                        advice.style.color = "red";
+                        advice.style.fontWeight = "bold";
                     }
                 }
                 
